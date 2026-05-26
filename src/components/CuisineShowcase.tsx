@@ -48,6 +48,16 @@ export default function CuisineShowcase() {
             </span>
           </div>
 
+          {activeDish.imageUrl && (
+            <div className="w-full h-40 sm:h-52 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group">
+              <img 
+                src={activeDish.imageUrl} 
+                alt={activeDish.name} 
+                className="w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
+              />
+            </div>
+          )}
+
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
             {activeDish.description}
           </p>
