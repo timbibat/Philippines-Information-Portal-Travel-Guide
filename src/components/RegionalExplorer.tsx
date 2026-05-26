@@ -112,6 +112,16 @@ export default function RegionalExplorer() {
                   </span>
                 </div>
 
+                {dest.imageUrl && (
+                  <div className="w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group">
+                    <img 
+                      src={dest.imageUrl} 
+                      alt={dest.name} 
+                      className="w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
+                    />
+                  </div>
+                )}
+
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
                   {dest.description}
                 </p>

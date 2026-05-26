@@ -19,6 +19,7 @@ export interface Destination {
   tags: string[];
   bestTime: string;
   activities: string[];
+  imageUrl?: string;
 }
 
 export interface Dish {
@@ -32,6 +33,7 @@ export interface Dish {
   description: string;
   historyAndCulture: string;
   cookingStyle: string; // Brief description of prep
+  imageUrl?: string;
 }
 
 export interface Phrase {

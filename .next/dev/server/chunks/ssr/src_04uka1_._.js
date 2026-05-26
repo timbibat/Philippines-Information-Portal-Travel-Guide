@@ -7,97 +7,208 @@ __turbopack_context__.s([
     ()=>Header
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+"use client";
+;
 ;
 function Header() {
+    const [weather, setWeather] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        temp: 27,
+        emoji: "☀️",
+        desc: "Tropical"
+    });
+    const [timeString, setTimeString] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        async function fetchWeather() {
+            try {
+                const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=14.5995&longitude=120.9842&current=temperature_2m,weather_code");
+                if (!response.ok) return;
+                const data = await response.json();
+                if (data.current) {
+                    const temp = Math.round(data.current.temperature_2m);
+                    const code = data.current.weather_code;
+                    let emoji = "☀️";
+                    let desc = "Tropical";
+                    if (code === 0) {
+                        emoji = "☀️";
+                        desc = "Sunny";
+                    } else if (code >= 1 && code <= 3) {
+                        emoji = "⛅";
+                        desc = "Partly Cloudy";
+                    } else if (code === 45 || code === 48) {
+                        emoji = "🌫️";
+                        desc = "Foggy";
+                    } else if (code >= 51 && code <= 65 || code >= 80 && code <= 82) {
+                        emoji = "🌧️";
+                        desc = "Rainy";
+                    } else if (code >= 95) {
+                        emoji = "⛈️";
+                        desc = "Stormy";
+                    }
+                    setWeather({
+                        temp,
+                        emoji,
+                        desc
+                    });
+                }
+            } catch (error) {
+                console.error("Failed to sync weather:", error);
+            }
+        }
+        fetchWeather();
+    }, []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const updateTime = ()=>{
+            try {
+                const options = {
+                    timeZone: "Asia/Manila",
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true
+                };
+                const formatter = new Intl.DateTimeFormat("en-US", options);
+                setTimeString(formatter.format(new Date()));
+            } catch (e) {
+                const now = new Date();
+                const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+                const phTime = new Date(utc + 3600000 * 8);
+                setTimeString(phTime.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true
+                }));
+            }
+        };
+        updateTime();
+        const timer = setInterval(updateTime, 1000);
+        return ()=>clearInterval(timer);
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-40 py-4 px-6 md:px-8 shadow-xs",
+        className: "w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-40 py-3 md:py-4 px-4 md:px-8 shadow-xs",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4",
+            className: "max-w-7xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 md:gap-4",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center gap-3",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                            src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
-                            alt: "Flag of the Philippines",
-                            className: "w-9 h-auto rounded-xs shadow-xs border border-slate-200/50"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 6,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-2xl font-serif-display font-black tracking-tight text-[#0038A8] italic",
-                                children: "PILIPINAS"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 12,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 11,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/Header.tsx",
-                    lineNumber: 5,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center gap-4 flex-wrap justify-center",
+                    className: "flex items-center justify-between md:justify-start gap-3",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex gap-2 text-xs font-bold uppercase tracking-widest text-slate-500",
+                            className: "flex items-center gap-2 md:gap-3",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "px-3 py-1 bg-white/60 border border-slate-200/60 rounded-full text-slate-600 shadow-xs flex items-center gap-1",
-                                    children: "☀️ Tropical 27°C"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
+                                    alt: "Flag of the Philippines",
+                                    className: "w-8 md:w-9 h-auto rounded-xs shadow-xs border border-slate-200/50"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 20,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "px-3 py-1 bg-white/60 border border-slate-200/60 rounded-full text-slate-600 shadow-xs flex items-center gap-1",
-                                    children: "🇵🇭 PHP / Peso"
+                                    className: "text-xl md:text-2xl font-serif-display font-black tracking-tight text-[#0038A8] italic",
+                                    children: "PILIPINAS"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 23,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 19,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                             href: "#bayani",
-                            className: "px-4 py-1.5 bg-[#0038A8] hover:bg-blue-800 hover:scale-102 active:scale-98 text-white rounded-full text-xs font-bold tracking-wider shadow-sm transition-all",
+                            className: "md:hidden px-3.5 py-1.5 bg-[#0038A8] hover:bg-blue-800 text-white rounded-full text-[10px] font-bold tracking-wider shadow-sm transition-all",
                             children: "TALK TO BAYANI"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 27,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header.tsx",
-                    lineNumber: 18,
+                    lineNumber: 91,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col md:flex-row items-center gap-3 md:gap-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 justify-start md:justify-center -mx-4 px-4 md:mx-0 md:px-0 text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-500 scrollbar-none",
+                            style: {
+                                WebkitOverflowScrolling: "touch",
+                                msOverflowStyle: "none",
+                                scrollbarWidth: "none"
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "shrink-0 px-3 py-1.5 bg-white/60 border border-slate-200/60 rounded-full text-slate-600 shadow-xs flex items-center gap-1 transition-all",
+                                    children: [
+                                        weather.emoji,
+                                        " ",
+                                        weather.desc,
+                                        " ",
+                                        weather.temp,
+                                        "°C"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Header.tsx",
+                                    lineNumber: 116,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "shrink-0 px-3 py-1.5 bg-white/60 border border-slate-200/60 rounded-full text-slate-600 shadow-xs flex items-center gap-1",
+                                    children: [
+                                        "🕒 ",
+                                        timeString || "PHT (UTC+8)"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Header.tsx",
+                                    lineNumber: 119,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "shrink-0 px-3 py-1.5 bg-white/60 border border-slate-200/60 rounded-full text-slate-600 shadow-xs flex items-center gap-1",
+                                    children: "🇵🇭 PHP / Peso"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Header.tsx",
+                                    lineNumber: 122,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Header.tsx",
+                            lineNumber: 115,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "#bayani",
+                            className: "hidden md:inline-block px-4 py-1.5 bg-[#0038A8] hover:bg-blue-800 hover:scale-102 active:scale-98 text-white rounded-full text-xs font-bold tracking-wider shadow-sm transition-all",
+                            children: "TALK TO BAYANI"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Header.tsx",
+                            lineNumber: 128,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/Header.tsx",
+                    lineNumber: 113,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Header.tsx",
-            lineNumber: 4,
+            lineNumber: 89,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Header.tsx",
-        lineNumber: 3,
+        lineNumber: 88,
         columnNumber: 5
     }, this);
 }
@@ -528,7 +639,8 @@ const DESTINATIONS = [
             'Viewing Basco Lighthouse',
             'Riding traditional Falua boats',
             'Meeting the welcoming Ivatan people'
-        ]
+        ],
+        imageUrl: 'https://www.projectlupad.com/wp-content/uploads/2018/09/Stunning-Beauty-of-Batanes-Island-from-Above-Aerial-View-Project-LUPAD.jpeg'
     },
     {
         id: 'vigan',
@@ -548,7 +660,8 @@ const DESTINATIONS = [
             'Eating hot empanada at the plaza',
             'Trying traditional pottery at Pagburnayan',
             'Visiting Syquia Mansion'
-        ]
+        ],
+        imageUrl: 'https://images.squarespace-cdn.com/content/v1/5a87961cbe42d637c54cab93/1552229691786-1M8KURNE27AO4YVQZDRO/vigan-philippines-city-guide%2B%2Bthings-to-do-see'
     },
     {
         id: 'el-nido',
@@ -568,7 +681,8 @@ const DESTINATIONS = [
             'Snorkeling at Secret Lagoon',
             'Ziplining between Las Cabanas islets',
             'Sunbathing on Nacpan Beach'
-        ]
+        ],
+        imageUrl: 'https://abrahamtours.com/philippines/wp-content/uploads/2024/09/Untitled-design-92.jpg'
     },
     {
         id: 'boracay',
@@ -588,7 +702,8 @@ const DESTINATIONS = [
             'Helmet diving',
             'Experiencing island beach walks',
             'Savoring fresh calamansi muffins'
-        ]
+        ],
+        imageUrl: 'https://images.lifestyleasia.com/wp-content/uploads/sites/6/2022/12/22224603/boracay-travel-guide-philippines-beach-1350x900.jpg'
     },
     {
         id: 'chocolate-hills',
@@ -608,7 +723,8 @@ const DESTINATIONS = [
             'Riding ATVs around the hill bases',
             'Visiting nearby Philippine Tarsier Sanctuary',
             'Cruising Loboc River'
-        ]
+        ],
+        imageUrl: 'https://carmen-bohol.gov.ph/wp-content/uploads/2024/03/Chocolate-Hills-Carmen.png'
     },
     {
         id: 'siargao',
@@ -628,7 +744,8 @@ const DESTINATIONS = [
             'Coconut grove swings at Maasin River',
             'Island-hopping to Naked, Daku & Guyam',
             'Swimming at Sugba Lagoon'
-        ]
+        ],
+        imageUrl: 'https://media.philstar.com/images/articles/nat2-siargao_2018-12-07_21-26-05.jpg'
     },
     {
         id: 'camiguin',
@@ -648,7 +765,71 @@ const DESTINATIONS = [
             'Relaxing on the sandbar of White Island',
             'Bathing in Hibok-Hibok Ardent Hot Springs',
             'Admiring Katibawasan Falls'
-        ]
+        ],
+        imageUrl: 'https://deih43ym53wif.cloudfront.net/white-siland-Camiguin-Philippines-shutterstock_1439447942.jpg_2f20ecb1f5.jpg'
+    },
+    {
+        id: 'banaue',
+        name: 'Banaue Rice Terraces',
+        location: 'Ifugao, Cordillera, Luzon',
+        islandGroup: 'Luzon',
+        description: 'Carved into the mountains of Ifugao by ancestors of the indigenous people over 2,000 years ago. Often called the "Eighth Wonder of the World," these hand-hewn terraces represent an exceptional agricultural engineering marvel and harmonious landscape design.',
+        funFact: 'If placed end-to-end, the terraces would reach halfway around the globe!',
+        tags: [
+            'Culture',
+            'Heritage',
+            'Highlands'
+        ],
+        bestTime: 'June to July (Lush green season) or March (Harvest season)',
+        activities: [
+            'Viewing from the main sunrise deck',
+            'Hiking down to Batad amphitheater terraces',
+            'Learning Ifugao wood-carving customs',
+            'Swimming under Tappiya Falls'
+        ],
+        imageUrl: 'https://media.philstar.com/photos/2019/04/01/gen8-banaue-rice-terraces_2019-04-01_23-49-03.jpg'
+    },
+    {
+        id: 'cebu-heritage',
+        name: 'Cebu Colonial Heritage Trail',
+        location: 'Cebu City, Visayas',
+        islandGroup: 'Visayas',
+        description: 'The cradle of Spanish colonization and Christian history in Asia. This heritage quarter features the Basilica Minore del Santo Niño (housing the oldest religious relic in the country), Magellan\'s Cross, and Fort San Pedro.',
+        funFact: 'Magellan\'s Cross is encased inside a protective hollow tindalo wood cross to protect the original fragments from relic hunters.',
+        tags: [
+            'History',
+            'Heritage',
+            'Culture'
+        ],
+        bestTime: 'January (To experience the Sinulog Festival spirit)',
+        activities: [
+            'Viewing Magellan\'s Cross ceiling paintings',
+            'Visiting the Santo Niño museum',
+            'Walking through 1730 Jesuit House',
+            'Exploring Fort San Pedro barracks'
+        ],
+        imageUrl: 'https://images.trvl-media.com/place/6162682/32b3595b-7d86-4ad1-a667-cc241661b12f.jpg'
+    },
+    {
+        id: 'lake-sebu',
+        name: 'Lake Sebu & T\'boli Heartlands',
+        location: 'South Cotabato, Mindanao',
+        islandGroup: 'Mindanao',
+        description: 'A serene highland lake serving as the ancestral domain of the T\'boli indigenous tribe. Famous for its dreamlike morning lotuses, high-altitude ziplining over 7 waterfalls, and the sacred, dream-inspired t\'nalak abaca weaving.',
+        funFact: 'T\'boli weavers are called "Dreamweavers" because the intricate geometric patterns of the T\'nalak cloth are said to be gifted to them in dreams by Fu Dalu, the goddess of abaca.',
+        tags: [
+            'Culture',
+            'Indigenous',
+            'Nature'
+        ],
+        bestTime: 'Year-round (High altitude keeps it cool)',
+        activities: [
+            'Watching T\'nalak weaving at the school of living traditions',
+            'Riding the 7 Waterfalls Zipline',
+            'Canoeing among morning pink lotuses',
+            'Listening to traditional Hegelung lute performances'
+        ],
+        imageUrl: 'https://i0.wp.com/riley.ph/wp-content/uploads/2018/07/south-cotabato-lake-sebu-8-5-1.jpg?ssl=1'
     }
 ];
 const DISHES = [
@@ -674,7 +855,8 @@ const DISHES = [
         ],
         description: 'Often called the unofficial national dish of the Philippines. It consists of meat slow-stewed in vinegar, soy sauce, crushed garlic, bay leaves, and peppercorns, rendering a tender, intensely flavored comfort dish.',
         historyAndCulture: 'Before refrigeration, indigenous Filipinos preserved meats using native vinegars and salt. When Spanish colonizers arrived, they observed this acid braise and named it "adobo" (from Spanish "adobar", to marinate), though the cooking method is purely pre-colonial.',
-        cookingStyle: 'Meat is marinated and browned, then simmered slowly under low heat until the rich sauce is reduced and emulsifies in its own fat.'
+        cookingStyle: 'Meat is marinated and browned, then simmered slowly under low heat until the rich sauce is reduced and emulsifies in its own fat.',
+        imageUrl: 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2024/07/29/CHICKEN_ADOBO_H_f.jpg.rend.hgtvcom.1280.960.suffix/1722282685644.webp'
     },
     {
         id: 'sinigang',
@@ -697,7 +879,8 @@ const DISHES = [
         ],
         description: 'A celebrated sour soup renowned for its refreshing, savory base. It showcases a diverse medley of indigenous vegetables like kangkong, long green chilies (sili), and eggplant, tied together by a lip-smacking tang.',
         historyAndCulture: 'Voted multiple times as one of the best soups in the world, Sinigang reflects Filipino preferences for "asim" (sourness), which mimics refreshing properties ideal for hot tropical weather.',
-        cookingStyle: 'Ingredients are boiled sequentially in a clear broth soured naturally by mashed real tamarind pods or local acidic fruits like batuan, bayabas (guava), or kamias.'
+        cookingStyle: 'Ingredients are boiled sequentially in a clear broth soured naturally by mashed real tamarind pods or local acidic fruits like batuan, bayabas (guava), or kamias.',
+        imageUrl: 'https://www.iankewks.com/wp-content/uploads/2024/10/IMG_8605.jpg'
     },
     {
         id: 'lechon',
@@ -721,7 +904,8 @@ const DISHES = [
         ],
         description: 'An iconic spit-roasted whole suckling pig, featuring shatteringly crisp golden-red skin and insanely juicy meat, heavily stuffed and perfumed with native lemongrass and herbs.',
         historyAndCulture: 'Crowned by Anthony Bourdain as the "best pig in the world," Lechon is the absolute centerpiece of Filipino fiestas, Christmas holiday feasts, and historic milestones.',
-        cookingStyle: 'The cavity is filled with lemongrass, spring onions, and garlic, then skewered on a bamboo spit and hand-rotated over roaring red-hot coal embers for several hours.'
+        cookingStyle: 'The cavity is filled with lemongrass, spring onions, and garlic, then skewered on a bamboo spit and hand-rotated over roaring red-hot coal embers for several hours.',
+        imageUrl: 'https://www.dukeshill.co.uk/cdn/shop/articles/20230502144252-cebu-style-lechon.jpg?v=1690310444'
     },
     {
         id: 'chicken-inasal',
@@ -744,7 +928,8 @@ const DISHES = [
         ],
         description: 'A distinct, smoky grilled chicken from Bacolod City. Unlike western barbecue, it is marinated in a special mixture of calamansi (local lime), lemongrass, ginger, and garlic, then basted with deep orange annatto seed oil.',
         historyAndCulture: 'Originated in Negros Occidental, it is proof of how native citrus (calamansi) and seed oils (annatto) can create unparalleled charcoal-fired profiles.',
-        cookingStyle: 'Basted continuously with annatto oil over blazing coals, lending its signature rich red-orange glaze and caramelized edges.'
+        cookingStyle: 'Basted continuously with annatto oil over blazing coals, lending its signature rich red-orange glaze and caramelized edges.',
+        imageUrl: 'https://yummykitchentv.com/wp-content/uploads/2025/10/Chicken-Inasal-in-Air-Fryer_feature-image_smaller.jpg'
     },
     {
         id: 'halo-halo',
@@ -769,7 +954,8 @@ const DISHES = [
         ],
         description: 'The ultimate colorful Filipino dessert! Meaning "Mix-Mix," it is layer upon layer of sweet beans, gelatins, taro, jackfruit, topped with fluffy shaved ice, thick evaporated milk, a scoop of purple ube ice cream, and caramel flan.',
         historyAndCulture: 'Evolved from Japanese pre-war migrants who brought "mitsu mame" (iced beans) to Manila. Filipinos hyper-customized it by piling fresh tropical fruits, ube, and rich Spanish-style egg pudding.',
-        cookingStyle: 'Layered beautifully inside a tall clear glass, filled with shaved ice and dairy, and vigorously hand-stirred by the diner before consuming.'
+        cookingStyle: 'Layered beautifully inside a tall clear glass, filled with shaved ice and dairy, and vigorously hand-stirred by the diner before consuming.',
+        imageUrl: 'https://assets.bonappetit.com/photos/60e46c6701084801b06de2a3/master/pass/Halo-Halo-Recipe-2021.jpg'
     },
     {
         id: 'kare-kare',
@@ -792,7 +978,8 @@ const DISHES = [
         ],
         description: 'A thick, golden oxtail stew slow-steamed in a rich toasted peanut butter and rice flour sauce. It is traditionally served beside pungent, salty sauteed shrimp paste (bagoong) to perfectly balance the nutty richness.',
         historyAndCulture: 'Some trace it back to Sepoy soldiers from India who settled in Marikina during the British occupation of Manila, adapting traditional curries with local peanut ingredients.',
-        cookingStyle: 'Beef oxtail is simmered for hours until gelatinously tender, then mixed into a toasted rice-and-peanut sauce, keeping vegetables crisp.'
+        cookingStyle: 'Beef oxtail is simmered for hours until gelatinously tender, then mixed into a toasted rice-and-peanut sauce, keeping vegetables crisp.',
+        imageUrl: 'https://www.unileverfoodsolutions.com.ph/dam/global-ufs/mcos/SEA/calcmenu/recipes/PH-recipes/red-meats-&-red-meat-dishes/kare-kare/kare-kare-main.jpg'
     }
 ];
 const PHRASES = [
@@ -1316,12 +1503,28 @@ function RegionalExplorer() {
                                         lineNumber: 103,
                                         columnNumber: 17
                                     }, this),
+                                    dest.imageUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: dest.imageUrl,
+                                            alt: dest.name,
+                                            className: "w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/RegionalExplorer.tsx",
+                                            lineNumber: 117,
+                                            columnNumber: 21
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/RegionalExplorer.tsx",
+                                        lineNumber: 116,
+                                        columnNumber: 19
+                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-slate-600 text-xs sm:text-sm leading-relaxed font-medium",
                                         children: dest.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 125,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1332,7 +1535,7 @@ function RegionalExplorer() {
                                                 children: "🎒 CORE ACTIVITIES & EXPERIENCES"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 131,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1344,7 +1547,7 @@ function RegionalExplorer() {
                                                                 className: "h-4 w-4 text-amber-500 mt-0.5 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                                lineNumber: 127,
+                                                                lineNumber: 137,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1352,24 +1555,24 @@ function RegionalExplorer() {
                                                                 children: act
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                                lineNumber: 128,
+                                                                lineNumber: 138,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 136,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 134,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 130,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1380,7 +1583,7 @@ function RegionalExplorer() {
                                                 children: "💡 LOCAL SECRET / INSIDER TIP"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 146,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1392,13 +1595,13 @@ function RegionalExplorer() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                lineNumber: 139,
+                                                lineNumber: 149,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 145,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1411,12 +1614,12 @@ function RegionalExplorer() {
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 157,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 155,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -1432,14 +1635,14 @@ function RegionalExplorer() {
                                     className: "h-10 w-10 text-slate-300 mx-auto animate-pulse mb-2"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/RegionalExplorer.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 166,
                                     columnNumber: 15
                                 }, this),
                                 "Select a destination to discover regional secrets"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/RegionalExplorer.tsx",
-                            lineNumber: 155,
+                            lineNumber: 165,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
@@ -1595,12 +1798,28 @@ function CuisineShowcase() {
                                 lineNumber: 36,
                                 columnNumber: 11
                             }, this),
+                            activeDish.imageUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-full h-40 sm:h-52 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: activeDish.imageUrl,
+                                    alt: activeDish.name,
+                                    className: "w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/CuisineShowcase.tsx",
+                                    lineNumber: 53,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/CuisineShowcase.tsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-slate-600 text-xs sm:text-sm leading-relaxed font-medium",
                                 children: activeDish.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                lineNumber: 51,
+                                lineNumber: 61,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1611,7 +1830,7 @@ function CuisineShowcase() {
                                         children: "History & Cultural Context:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 67,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1623,13 +1842,13 @@ function CuisineShowcase() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                        lineNumber: 58,
+                                        lineNumber: 68,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                lineNumber: 56,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1642,7 +1861,7 @@ function CuisineShowcase() {
                                                 children: "FLAVOR PROFILE"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 74,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1652,33 +1871,9 @@ function CuisineShowcase() {
                                                         children: flv
                                                     }, idx, false, {
                                                         fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                                        lineNumber: 67,
+                                                        lineNumber: 77,
                                                         columnNumber: 19
                                                     }, this))
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                                lineNumber: 65,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                        lineNumber: 63,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-[9px] font-extrabold tracking-widest text-slate-400 uppercase block mb-1",
-                                                children: "KEY INGREDIENTS"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                                lineNumber: 74,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-xs text-slate-700 font-semibold",
-                                                children: activeDish.mainIngredients.join(', ')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/CuisineShowcase.tsx",
                                                 lineNumber: 75,
@@ -1689,11 +1884,35 @@ function CuisineShowcase() {
                                         fileName: "[project]/src/components/CuisineShowcase.tsx",
                                         lineNumber: 73,
                                         columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-[9px] font-extrabold tracking-widest text-slate-400 uppercase block mb-1",
+                                                children: "KEY INGREDIENTS"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/CuisineShowcase.tsx",
+                                                lineNumber: 84,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-slate-700 font-semibold",
+                                                children: activeDish.mainIngredients.join(', ')
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/CuisineShowcase.tsx",
+                                                lineNumber: 85,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/CuisineShowcase.tsx",
+                                        lineNumber: 83,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CuisineShowcase.tsx",
-                                lineNumber: 62,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1718,12 +1937,12 @@ function CuisineShowcase() {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/CuisineShowcase.tsx",
-                    lineNumber: 84,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/CuisineShowcase.tsx",
-                lineNumber: 83,
+                lineNumber: 93,
                 columnNumber: 7
             }, this)
         ]
@@ -1762,9 +1981,12 @@ function Phrasebook() {
         const matchesSearch = phrase.english.toLowerCase().includes(searchString) || phrase.tagalog.toLowerCase().includes(searchString) || phrase.cebuano.toLowerCase().includes(searchString) || phrase.ilocano.toLowerCase().includes(searchString);
         return matchesContext && matchesSearch;
     });
-    // Play Pronunciation Tip Text-To-Speech simulation (client-side feedback)
+    // Play Pronunciation Tip using real Web Speech API Text-to-Speech
     const triggerPronunciationTip = (phrase, text)=>{
         setSoundNote(`Pronouncing: "${text}" -> Try reading it as: ${phrase.pronunciationTip}`);
+        // Web Speech API - speaks the phrase out loud
+        if (("TURBOPACK compile-time value", "undefined") !== 'undefined' && 'speechSynthesis' in window) //TURBOPACK unreachable
+        ;
         // Clear after a few seconds
         setTimeout(()=>{
             setSoundNote((current)=>current && current.includes(text) ? null : current);
@@ -1783,7 +2005,7 @@ function Phrasebook() {
                                 children: "LOCAL TRANSLATIONS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 36,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1791,7 +2013,7 @@ function Phrasebook() {
                                 children: "Phrasebook"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 37,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1799,13 +2021,13 @@ function Phrasebook() {
                                 children: "Compare phrases across Tagalog, Cebuano, and Ilocano"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 38,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 35,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1820,12 +2042,12 @@ function Phrasebook() {
                                 children: lang === 'tagalog' ? 'Tagalog (N)' : lang === 'cebuano' ? 'Cebuano (S)' : 'Ilocano (N)'
                             }, lang, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 44,
+                                lineNumber: 61,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 42,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1838,7 +2060,7 @@ function Phrasebook() {
                                         className: "absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 77,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1849,13 +2071,13 @@ function Phrasebook() {
                                         className: "w-full bg-slate-50 border border-slate-200 rounded-lg pl-8 pr-3 py-1.5 text-xs outline-hidden focus:border-[#0038A8] focus:bg-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 60,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1868,7 +2090,7 @@ function Phrasebook() {
                                         children: "All Situations"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 91,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1876,7 +2098,7 @@ function Phrasebook() {
                                         children: "Greetings"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 92,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1884,7 +2106,7 @@ function Phrasebook() {
                                         children: "Eating & Dining"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 93,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1892,19 +2114,19 @@ function Phrasebook() {
                                         children: "Transport & Travel"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 94,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 70,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 59,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this),
                     soundNote && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1914,7 +2136,7 @@ function Phrasebook() {
                                 className: "h-4 w-4 shrink-0 text-amber-600 mt-0.5"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 85,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1922,17 +2144,17 @@ function Phrasebook() {
                                 children: soundNote
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 86,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 84,
+                        lineNumber: 100,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "max-h-[220px] overflow-y-auto space-y-1.5 pr-1",
+                        className: "h-[500px] overflow-y-auto space-y-1.5 pr-1",
                         children: filteredPhrases.length > 0 ? filteredPhrases.map((phr)=>{
                             const translation = phr[selectedLanguageForPhrase];
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1947,21 +2169,21 @@ function Phrasebook() {
                                                 children: phr.english
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                                lineNumber: 102,
-                                                columnNumber: 22
+                                                lineNumber: 118,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-sm font-black text-slate-900",
                                                 children: translation
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                                lineNumber: 103,
-                                                columnNumber: 22
+                                                lineNumber: 119,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 117,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1970,18 +2192,18 @@ function Phrasebook() {
                                             className: "h-3.5 w-3.5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Phrasebook.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 122,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Phrasebook.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 121,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, phr.id, true, {
                                 fileName: "[project]/src/components/Phrasebook.tsx",
-                                lineNumber: 96,
+                                lineNumber: 112,
                                 columnNumber: 17
                             }, this);
                         }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1989,18 +2211,18 @@ function Phrasebook() {
                             children: "No phrases found. Try adjusting filters."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Phrasebook.tsx",
-                            lineNumber: 112,
+                            lineNumber: 128,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 91,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Phrasebook.tsx",
-                lineNumber: 34,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2010,26 +2232,26 @@ function Phrasebook() {
                         children: "(N) Northern Dialects"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 118,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         children: "(S) Southern Dialects"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Phrasebook.tsx",
-                        lineNumber: 119,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Phrasebook.tsx",
-                lineNumber: 117,
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Phrasebook.tsx",
-        lineNumber: 33,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }

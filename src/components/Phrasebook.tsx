@@ -13,16 +13,33 @@ export default function Phrasebook() {
   const filteredPhrases = PHRASES.filter(phrase => {
     const matchesContext = activePhraseContext === 'all' || phrase.context === activePhraseContext;
     const searchString = phraseSearch.toLowerCase();
-    const matchesSearch = phrase.english.toLowerCase().includes(searchString) || 
-                          phrase.tagalog.toLowerCase().includes(searchString) ||
-                          phrase.cebuano.toLowerCase().includes(searchString) ||
-                          phrase.ilocano.toLowerCase().includes(searchString);
+    const matchesSearch = phrase.english.toLowerCase().includes(searchString) ||
+      phrase.tagalog.toLowerCase().includes(searchString) ||
+      phrase.cebuano.toLowerCase().includes(searchString) ||
+      phrase.ilocano.toLowerCase().includes(searchString);
     return matchesContext && matchesSearch;
   });
 
-  // Play Pronunciation Tip Text-To-Speech simulation (client-side feedback)
+  // Play Pronunciation Tip using real Web Speech API Text-to-Speech
   const triggerPronunciationTip = (phrase: Phrase, text: string) => {
     setSoundNote(`Pronouncing: "${text}" -> Try reading it as: ${phrase.pronunciationTip}`);
+    
+    // Web Speech API - speaks the phrase out loud
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel(); // Stop any currently speaking voices
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Use Tagalog voice if tagalog is selected, otherwise fallback to local reader
+      if (selectedLanguageForPhrase === 'tagalog') {
+        utterance.lang = 'fil-PH';
+      } else {
+        utterance.lang = 'fil-PH'; // Bisaya/Ilocano also spoken with Filipino phonetics works best
+      }
+      
+      utterance.rate = 0.8; // Speak slightly slower for educational clarity
+      window.speechSynthesis.speak(utterance);
+    }
+
     // Clear after a few seconds
     setTimeout(() => {
       setSoundNote((current) => current && current.includes(text) ? null : current);
@@ -44,11 +61,10 @@ export default function Phrasebook() {
             <button
               key={lang}
               onClick={() => setSelectedLanguageForPhrase(lang)}
-              className={`flex-1 text-center py-1.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${
-                selectedLanguageForPhrase === lang
+              className={`flex-1 text-center py-1.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${selectedLanguageForPhrase === lang
                   ? 'bg-[#0038A8] text-white shadow-sm'
                   : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
-              }`}
+                }`}
             >
               {lang === 'tagalog' ? 'Tagalog (N)' : lang === 'cebuano' ? 'Cebuano (S)' : 'Ilocano (N)'}
             </button>
@@ -88,7 +104,7 @@ export default function Phrasebook() {
         )}
 
         {/* Phrase matching Scrollbox */}
-        <div className="max-h-[220px] overflow-y-auto space-y-1.5 pr-1">
+        <div className="h-[500px] overflow-y-auto space-y-1.5 pr-1">
           {filteredPhrases.length > 0 ? (
             filteredPhrases.map(phr => {
               const translation = phr[selectedLanguageForPhrase];
@@ -99,8 +115,8 @@ export default function Phrasebook() {
                   className="p-3 bg-slate-50/50 hover:bg-amber-50/50 hover:border-amber-200 border border-slate-100 rounded-lg cursor-pointer transition-all flex items-center justify-between group"
                 >
                   <div className="space-y-0.5">
-                     <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{phr.english}</p>
-                     <p className="text-sm font-black text-slate-900">{translation}</p>
+                    <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{phr.english}</p>
+                    <p className="text-sm font-black text-slate-900">{translation}</p>
                   </div>
                   <button className="h-7 w-7 bg-white text-slate-400 hover:text-amber-500 hover:border-amber-300 rounded-full border border-slate-150 flex items-center justify-center transition-colors group-hover:scale-105">
                     <Volume2 className="h-3.5 w-3.5" />
