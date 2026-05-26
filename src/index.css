@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --ph-blue: #0038A8;
+  --ph-red: #CE1126;
+  --ph-gold: #FCD116;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-400: #94a3b8;
+  
+  /* Modern warm editorial palette */
+  --bg-main: #fcfbfa;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(15, 23, 42, 0.06);
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 56, 168, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(206, 17, 38, 0.02) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(252, 209, 22, 0.03) 0px, transparent 50%);
+  color: var(--slate-800);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Elegant Bento styling */
+.bento-grid-item {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(0, 56, 168, 0.03);
+  border-color: rgba(0, 56, 168, 0.12);
+}
+
+/* Stat Label Styling */
+.stat-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--slate-400);
+  margin-bottom: 4px;
+}
+
+/* Fonts and Typographic Accents */
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar for sleek lists */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth active state transitions */
+button, select, input, a {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chat bubble aesthetics */
+.chat-bubble-user {
+  background: linear-gradient(135deg, var(--ph-blue) 0%, #1e5dd8 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 56, 168, 0.15);
+}
+
+.chat-bubble-ai {
+  background: white;
+  color: var(--slate-800);
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* Micro-animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
