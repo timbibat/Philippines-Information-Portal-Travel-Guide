@@ -3,10 +3,11 @@ export default function Header() {
     <header className="w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-40 py-4 px-6 md:px-8 shadow-xs">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="flex flex-col gap-1 w-10">
-            <div className="h-2 w-full bg-[#0038A8] rounded-full"></div>
-            <div className="h-2 w-full bg-[#CE1126] rounded-full"></div>
-          </div>
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" 
+            alt="Flag of the Philippines" 
+            className="w-9 h-auto rounded-xs shadow-xs border border-slate-200/50"
+          />
           <div>
             <span className="text-2xl font-serif-display font-black tracking-tight text-[#0038A8] italic">
               PILIPINAS
