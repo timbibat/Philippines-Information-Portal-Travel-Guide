@@ -6,11 +6,11 @@ export default function CuisineShowcase() {
   const activeDish = DISHES.find(d => d.id === selectedDishId) || DISHES[0];
 
   return (
-    <div className="col-span-1 lg:col-span-7 bento-grid-item p-6 flex flex-col justify-between">
+    <section aria-label="Filipino Cuisine Showcase" className="col-span-1 lg:col-span-7 bento-grid-item p-6 flex flex-col justify-between">
       <div className="space-y-4">
         <div>
           <span className="stat-label">FLAVORS OF THE ARCHIPELAGO</span>
-          <h3 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Cuisine Showcase</h3>
+          <h2 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Cuisine Showcase</h2>
           <p className="text-xs text-slate-500 mt-1">Click a dish below to study its origins, preparation, and flavor profiles</p>
         </div>
 
@@ -52,7 +52,7 @@ export default function CuisineShowcase() {
             <div className="w-full h-40 sm:h-52 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group">
               <img 
                 src={activeDish.imageUrl} 
-                alt={activeDish.name} 
+                alt={`${activeDish.name} — traditional Filipino dish from ${activeDish.islandGroupOrigin}`} 
                 className="w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
               />
             </div>
@@ -95,6 +95,6 @@ export default function CuisineShowcase() {
           Preparation style: {activeDish.cookingStyle}
         </span>
       </div>
-    </div>
+    </section>
   );
 }

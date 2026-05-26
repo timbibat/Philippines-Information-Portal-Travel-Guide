@@ -85,8 +85,8 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-40 py-3 md:py-4 px-4 md:px-8 shadow-xs">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 md:gap-4">
+    <header className="w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-40 py-3 md:py-4 px-4 md:px-8 shadow-xs" role="banner">
+      <nav className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 md:gap-4" aria-label="Main Navigation">
         {/* Top bar on mobile, aligned row on desktop */}
         <div className="flex items-center justify-between md:justify-start gap-3">
           <div className="flex items-center gap-2 md:gap-3">
@@ -132,7 +132,7 @@ export default function Header() {
             TALK TO BAYANI
           </a>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

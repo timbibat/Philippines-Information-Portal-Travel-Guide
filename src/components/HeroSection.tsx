@@ -2,7 +2,7 @@ import { Utensils } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <section aria-label="Philippines Overview" className="grid grid-cols-1 lg:grid-cols-12 gap-6">
       {/* Main 2x2 Accent Hero Cell */}
       <div className="col-span-1 lg:col-span-8 bg-gradient-to-br from-[#0038A8] to-[#002776] text-white rounded-[28px] relative p-8 md:p-10 border-none shadow-xl overflow-hidden flex flex-col justify-between min-h-[380px] hover:translate-y-[-4px] hover:shadow-2xl transition-all duration-300">
         {/* Ambient Background Glow */}
@@ -38,7 +38,7 @@ export default function HeroSection() {
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-bl-full pointer-events-none animate-pulse-glow"></div>
           <div>
             <div className="stat-label">Capital City</div>
-            <h2 className="text-3xl font-serif-display font-black text-slate-900 tracking-tight">Manila</h2>
+            <p className="text-3xl font-serif-display font-black text-slate-900 tracking-tight">Manila</p>
             <p className="text-xs text-slate-500 mt-1">Historically rich metropolitan epicenter</p>
           </div>
           <div className="h-px bg-slate-100 my-4"></div>
@@ -73,6 +73,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
