@@ -1292,7 +1292,7 @@ function RegionalExplorer() {
                         className: "lg:col-span-4 space-y-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-5 bg-slate-50 rounded-2xl border border-slate-200/30 space-y-3",
+                                className: "animate-fade-in p-5 bg-slate-50 rounded-2xl border border-slate-200/30 space-y-3",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-[10px] font-extrabold px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 uppercase",
@@ -1377,7 +1377,7 @@ function RegionalExplorer() {
                                         columnNumber: 13
                                     }, this)
                                 ]
-                            }, void 0, true, {
+                            }, selectedGroup, true, {
                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
                                 lineNumber: 49,
                                 columnNumber: 11
@@ -1454,7 +1454,7 @@ function RegionalExplorer() {
                         children: activeDestId ? (()=>{
                             const dest = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DESTINATIONS"].find((d)=>d.id === activeDestId);
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-6",
+                                className: "animate-fade-in space-y-6",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4",
@@ -1623,7 +1623,7 @@ function RegionalExplorer() {
                                         columnNumber: 17
                                     }, this)
                                 ]
-                            }, void 0, true, {
+                            }, activeDestId, true, {
                                 fileName: "[project]/src/components/RegionalExplorer.tsx",
                                 lineNumber: 102,
                                 columnNumber: 15
@@ -1735,7 +1735,7 @@ function CuisineShowcase() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "space-y-4 pt-2",
+                        className: "animate-fade-in space-y-4 pt-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between flex-wrap gap-2",
@@ -1916,7 +1916,7 @@ function CuisineShowcase() {
                                 columnNumber: 11
                             }, this)
                         ]
-                    }, void 0, true, {
+                    }, activeDish.id, true, {
                         fileName: "[project]/src/components/CuisineShowcase.tsx",
                         lineNumber: 35,
                         columnNumber: 9
@@ -2431,7 +2431,7 @@ function HeritageTrivia() {
                 lineNumber: 59,
                 columnNumber: 9
             }, this) : /* Active Question Panel */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fadeIn",
+                className: "grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fade-in",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "md:col-span-6 space-y-4",
@@ -2568,7 +2568,7 @@ function HeritageTrivia() {
                         columnNumber: 11
                     }, this)
                 ]
-            }, void 0, true, {
+            }, currentQuestionIdx, true, {
                 fileName: "[project]/src/components/HeritageTrivia.tsx",
                 lineNumber: 85,
                 columnNumber: 9
@@ -2595,6 +2595,162 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
+function parseInlineMarkdown(text) {
+    const parts = [];
+    let currentIdx = 0;
+    // Regex matches bold (**text**), italic (*text*), inline code (`code`), or bold-italic (***text***)
+    const regex = /(\*\*\*|___)(.*?)\1|(\*\*|__)(.*?)\3|(\*|_)(.*?)\5|(`)(.*?)\7/g;
+    let match;
+    while((match = regex.exec(text)) !== null){
+        const matchIdx = match.index;
+        // Add preceding plain text
+        if (matchIdx > currentIdx) {
+            parts.push(text.substring(currentIdx, matchIdx));
+        }
+        if (match[1]) {
+            // Bold + Italic
+            parts.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                className: "font-extrabold italic text-slate-950",
+                children: match[2]
+            }, matchIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 24,
+                columnNumber: 9
+            }, this));
+        } else if (match[3]) {
+            // Bold
+            parts.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                className: "font-extrabold text-slate-900",
+                children: match[4]
+            }, matchIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 31,
+                columnNumber: 9
+            }, this));
+        } else if (match[5]) {
+            // Italic
+            parts.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                className: "italic text-slate-800",
+                children: match[6]
+            }, matchIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 38,
+                columnNumber: 9
+            }, this));
+        } else if (match[7]) {
+            // Inline Code
+            parts.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
+                className: "px-1.5 py-0.5 bg-slate-100/90 border border-slate-200/60 rounded text-red-600 font-mono text-xs",
+                children: match[8]
+            }, matchIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 45,
+                columnNumber: 9
+            }, this));
+        }
+        currentIdx = regex.lastIndex;
+    }
+    // Add remaining plain text
+    if (currentIdx < text.length) {
+        parts.push(text.substring(currentIdx));
+    }
+    return parts.length > 0 ? parts : text;
+}
+function renderMessageText(text) {
+    // Normalize triple dash dividers to simple horizontal rules
+    const normalizedText = text.replace(/---\s*$/gm, "\n---DIVIDER---\n");
+    const lines = normalizedText.split("\n");
+    return lines.map((line, lineIdx)=>{
+        // Skip empty lines, render clean margin spacing
+        if (!line.trim()) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "h-2"
+        }, lineIdx, false, {
+            fileName: "[project]/src/components/BayaniChatbot.tsx",
+            lineNumber: 69,
+            columnNumber: 30
+        }, this);
+        // Render Divider line
+        if (line.includes("---DIVIDER---")) {
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
+                className: "border-t border-slate-200/80 my-3"
+            }, lineIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 73,
+                columnNumber: 14
+            }, this);
+        }
+        // Detect header (e.g., ### Title or ## Title)
+        const headerMatch = line.match(/^(#{1,6})\s+(.*)$/);
+        if (headerMatch) {
+            const level = headerMatch[1].length;
+            const content = headerMatch[2];
+            const parsedContent = parseInlineMarkdown(content);
+            if (level === 1) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                className: "text-base sm:text-lg font-black mt-3 mb-1 text-slate-900 leading-tight",
+                children: parsedContent
+            }, lineIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 83,
+                columnNumber: 31
+            }, this);
+            if (level === 2) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                className: "text-sm sm:text-base font-black mt-2.5 mb-1 text-slate-900 leading-tight",
+                children: parsedContent
+            }, lineIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 84,
+                columnNumber: 31
+            }, this);
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                className: "text-xs sm:text-sm font-extrabold mt-2 mb-1 text-slate-900 leading-tight",
+                children: parsedContent
+            }, lineIdx, false, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 85,
+                columnNumber: 14
+            }, this);
+        }
+        // Detect bullet lists or numbered lists
+        const listMatch = line.match(/^(\s*)([-*+]|\d+\.)\s+(.*)$/);
+        if (listMatch) {
+            const content = listMatch[3];
+            const isNumbered = /^\d+/.test(listMatch[2]);
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex gap-2 ml-4 my-1 items-start leading-relaxed",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-amber-500 font-extrabold select-none mt-0.5 shrink-0",
+                        children: isNumbered ? listMatch[2] : "•"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/BayaniChatbot.tsx",
+                        lineNumber: 95,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-xs sm:text-sm text-slate-700",
+                        children: parseInlineMarkdown(content)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/BayaniChatbot.tsx",
+                        lineNumber: 98,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, lineIdx, true, {
+                fileName: "[project]/src/components/BayaniChatbot.tsx",
+                lineNumber: 94,
+                columnNumber: 9
+            }, this);
+        }
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-xs sm:text-sm text-slate-700 leading-relaxed mb-1.5",
+            children: parseInlineMarkdown(line)
+        }, lineIdx, false, {
+            fileName: "[project]/src/components/BayaniChatbot.tsx",
+            lineNumber: 106,
+            columnNumber: 7
+        }, this);
+    });
+}
 function BayaniChatbot() {
     const [chatMessages, setChatMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([
         {
@@ -2703,7 +2859,7 @@ function BayaniChatbot() {
                             children: "🤖 SERVER-SIDE SMART CONCIERGE"
                         }, void 0, false, {
                             fileName: "[project]/src/components/BayaniChatbot.tsx",
-                            lineNumber: 91,
+                            lineNumber: 199,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2711,7 +2867,7 @@ function BayaniChatbot() {
                             children: "Ask Bayani, Your Virtual Companion"
                         }, void 0, false, {
                             fileName: "[project]/src/components/BayaniChatbot.tsx",
-                            lineNumber: 94,
+                            lineNumber: 202,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2719,18 +2875,18 @@ function BayaniChatbot() {
                             children: "Let Gemini plan custom itineraries, locate white sandbars, explain island lore, and suggest local delicacies."
                         }, void 0, false, {
                             fileName: "[project]/src/components/BayaniChatbot.tsx",
-                            lineNumber: 97,
+                            lineNumber: 205,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/BayaniChatbot.tsx",
-                    lineNumber: 90,
+                    lineNumber: 198,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                lineNumber: 89,
+                lineNumber: 197,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2744,7 +2900,7 @@ function BayaniChatbot() {
                                 children: "PREDEFINED QUICK-TIPS"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 104,
+                                lineNumber: 212,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2752,7 +2908,7 @@ function BayaniChatbot() {
                                 children: "Ask anything, or click a quick suggestion block below to test itinerary planning instantly:"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 107,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2763,12 +2919,12 @@ function BayaniChatbot() {
                                         children: cp.title
                                     }, idx, false, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 221,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 111,
+                                lineNumber: 219,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2778,7 +2934,7 @@ function BayaniChatbot() {
                                         className: "h-5 w-5 text-emerald-600 shrink-0 mt-0.5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2789,7 +2945,7 @@ function BayaniChatbot() {
                                                 children: "Flagship Host Credentials"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 235,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2797,25 +2953,25 @@ function BayaniChatbot() {
                                                 children: "This interactive bot communicates with our persistent node server utilizing Gemini. All suggestions are tourist-centric and cultural."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 236,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 234,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 124,
+                                lineNumber: 232,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                        lineNumber: 103,
+                        lineNumber: 211,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2834,21 +2990,21 @@ function BayaniChatbot() {
                                                     children: isGuide ? 'B' : 'U'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 254,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: `rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${isGuide ? 'chat-bubble-ai' : 'chat-bubble-user font-semibold'}`,
-                                                    children: msg.text
+                                                    children: isGuide ? renderMessageText(msg.text) : msg.text
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 261,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, msg.id, true, {
                                             fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 250,
                                             columnNumber: 17
                                         }, this);
                                     }),
@@ -2860,7 +3016,7 @@ function BayaniChatbot() {
                                                 children: "B"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 166,
+                                                lineNumber: 274,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2873,40 +3029,40 @@ function BayaniChatbot() {
                                                                 className: "h-1.5 w-1.5 rounded-full bg-slate-400 animate-bounce"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                                lineNumber: 171,
+                                                                lineNumber: 279,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "h-1.5 w-1.5 rounded-full bg-slate-400 animate-bounce delay-75"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                                lineNumber: 172,
+                                                                lineNumber: 280,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "h-1.5 w-1.5 rounded-full bg-slate-400 animate-bounce delay-150"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                                lineNumber: 173,
+                                                                lineNumber: 281,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                        lineNumber: 170,
+                                                        lineNumber: 278,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Bayani is writing custom travel tips..."
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 277,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 165,
+                                        lineNumber: 273,
                                         columnNumber: 15
                                     }, this),
                                     apiError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2917,7 +3073,7 @@ function BayaniChatbot() {
                                                 children: "Secret API Key Missing / Off line"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 182,
+                                                lineNumber: 290,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2925,7 +3081,7 @@ function BayaniChatbot() {
                                                 children: apiError
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 183,
+                                                lineNumber: 291,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2933,26 +3089,26 @@ function BayaniChatbot() {
                                                 children: "Notice: In the developer zone, please check the secrets tab on top control panel."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 292,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 289,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         ref: chatBottomRef
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 188,
+                                        lineNumber: 296,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 138,
+                                lineNumber: 246,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -2971,56 +3127,56 @@ function BayaniChatbot() {
                                         disabled: isSending
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 199,
+                                        lineNumber: 307,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "submit",
                                         disabled: !inputMessage.trim() || isSending,
-                                        className: "h-10 px-4 bg-[#0038A8] hover:bg-blue-800 disabled:bg-slate-100 disabled:text-slate-350 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-102 active:scale-98 transition-all",
+                                        className: "h-10 px-4 bg-ph-blue hover:bg-blue-700 disabled:bg-slate-100 disabled:text-slate-400 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md hover:scale-102 active:scale-98 transition-all",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                 className: "h-3.5 w-3.5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 320,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Send"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                                lineNumber: 213,
+                                                lineNumber: 321,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 315,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                                lineNumber: 192,
+                                lineNumber: 300,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BayaniChatbot.tsx",
-                        lineNumber: 136,
+                        lineNumber: 244,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BayaniChatbot.tsx",
-                lineNumber: 101,
+                lineNumber: 209,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/BayaniChatbot.tsx",
-        lineNumber: 88,
+        lineNumber: 196,
         columnNumber: 5
     }, this);
 }

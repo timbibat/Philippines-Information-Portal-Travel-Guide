@@ -32,7 +32,7 @@ export default function CuisineShowcase() {
         </div>
 
         {/* Selected dish details */}
-        <div className="space-y-4 pt-2">
+        <div key={activeDish.id} className="animate-fade-in space-y-4 pt-2">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div>
               <h4 className="text-xl font-serif-display font-black text-slate-900 flex items-center gap-1.5">
