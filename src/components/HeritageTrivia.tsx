@@ -82,7 +82,7 @@ export default function HeritageTrivia() {
         </div>
       ) : (
         /* Active Question Panel */
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fadeIn">
+        <div key={currentQuestionIdx} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fade-in">
           {/* Question text & Progress bar */}
           <div className="md:col-span-6 space-y-4">
             <div className="h-1.5 w-full bg-slate-850 rounded-full overflow-hidden">

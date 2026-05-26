@@ -46,7 +46,7 @@ export default function RegionalExplorer() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left: Interactive Regional Card profile */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200/30 space-y-3">
+          <div key={selectedGroup} className="animate-fade-in p-5 bg-slate-50 rounded-2xl border border-slate-200/30 space-y-3">
             <span className="text-[10px] font-extrabold px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 uppercase">
               {groupData.tagline}
             </span>
@@ -99,7 +99,7 @@ export default function RegionalExplorer() {
           {activeDestId ? (() => {
             const dest = DESTINATIONS.find(d => d.id === activeDestId)!;
             return (
-              <div className="space-y-6">
+              <div key={activeDestId} className="animate-fade-in space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
                   <div>
                     <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-[#CE1126] uppercase tracking-wider mb-1">

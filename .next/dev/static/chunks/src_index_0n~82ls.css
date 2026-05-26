@@ -65,9 +65,8 @@
 
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-sans: "Plus Jakarta Sans", sans-serif;
+    --font-serif: "Playfair Display", serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-50: #fef2f2;
@@ -75,6 +74,7 @@
     --color-red-200: #ffcaca;
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
+    --color-red-600: #e40014;
     --color-red-700: #bf000f;
     --color-red-900: #82181a;
     --color-red-950: #460809;
@@ -94,6 +94,7 @@
     --color-emerald-600: #009767;
     --color-emerald-950: #002c22;
     --color-blue-50: #eff6ff;
+    --color-blue-700: #1447e6;
     --color-blue-800: #193cb8;
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
@@ -143,6 +144,7 @@
     --tracking-wide: .025em;
     --tracking-wider: .05em;
     --tracking-widest: .1em;
+    --leading-tight: 1.25;
     --leading-snug: 1.375;
     --leading-normal: 1.5;
     --leading-relaxed: 1.625;
@@ -161,6 +163,7 @@
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-ph-blue: #0038a8;
   }
 
   @supports (color: lab(0% 0 0)) {
@@ -170,6 +173,7 @@
       --color-red-200: lab(86.017% 19.8815 7.75869);
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
+      --color-red-600: lab(48.4493% 77.4328 61.5452);
       --color-red-700: lab(40.4273% 67.2623 53.7441);
       --color-red-900: lab(28.5139% 44.5539 29.0463);
       --color-red-950: lab(13.003% 29.04 16.7519);
@@ -189,6 +193,7 @@
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
       --color-emerald-950: lab(15.0582% -17.9507 2.38369);
       --color-blue-50: lab(96.492% -1.14647 -5.11479);
+      --color-blue-700: lab(36.9089% 35.0961 -85.6872);
       --color-blue-800: lab(30.2514% 27.7854 -70.2699);
       --color-slate-50: lab(98.1434% -.369549 -1.05968);
       --color-slate-100: lab(96.286% -.852466 -2.46847);
@@ -564,8 +569,16 @@
     margin-inline: auto;
   }
 
+  .my-1 {
+    margin-block: calc(var(--spacing) * 1);
+  }
+
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
+  }
+
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
   }
 
   .my-4 {
@@ -582,6 +595,10 @@
 
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
+  }
+
+  .mt-2\.5 {
+    margin-top: calc(var(--spacing) * 2.5);
   }
 
   .mt-3 {
@@ -604,6 +621,10 @@
     margin-bottom: calc(var(--spacing) * 1);
   }
 
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
+  }
+
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -614,6 +635,10 @@
 
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
+  }
+
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
   }
 
   .ml-auto {
@@ -646,6 +671,10 @@
 
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
+  }
+
+  .h-2 {
+    height: calc(var(--spacing) * 2);
   }
 
   .h-3 {
@@ -700,28 +729,12 @@
     height: calc(var(--spacing) * 80);
   }
 
-  .h-\[260px\] {
-    height: 260px;
-  }
-
-  .h-\[280px\] {
-    height: 280px;
-  }
-
-  .h-\[300px\] {
-    height: 300px;
-  }
-
   .h-\[400px\] {
     height: 400px;
   }
 
   .h-\[500px\] {
     height: 500px;
-  }
-
-  .h-\[flex\] {
-    height: flex;
   }
 
   .h-auto {
@@ -770,10 +783,6 @@
 
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-
-  .w-9 {
-    width: calc(var(--spacing) * 9);
   }
 
   .w-10 {
@@ -1284,6 +1293,10 @@
     }
   }
 
+  .bg-ph-blue {
+    background-color: var(--color-ph-blue);
+  }
+
   .bg-red-50 {
     background-color: var(--color-red-50);
   }
@@ -1314,6 +1327,16 @@
 
   .bg-slate-100 {
     background-color: var(--color-slate-100);
+  }
+
+  .bg-slate-100\/90 {
+    background-color: #f1f5f9e6;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-slate-100\/90 {
+      background-color: color-mix(in oklab, var(--color-slate-100) 90%, transparent);
+    }
   }
 
   .bg-slate-200\/60 {
@@ -1517,6 +1540,10 @@
     padding-inline: calc(var(--spacing) * 1);
   }
 
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -1563,10 +1590,6 @@
 
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
   }
 
   .py-6 {
@@ -1649,6 +1672,11 @@
     line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
 
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -1699,6 +1727,11 @@
   .leading-snug {
     --tw-leading: var(--leading-snug);
     line-height: var(--leading-snug);
+  }
+
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
   }
 
   .font-black {
@@ -1833,6 +1866,10 @@
 
   .text-red-400 {
     color: var(--color-red-400);
+  }
+
+  .text-red-600 {
+    color: var(--color-red-600);
   }
 
   .text-red-700 {
@@ -2097,6 +2134,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-blue-700:hover {
+      background-color: var(--color-blue-700);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-blue-800:hover {
       background-color: var(--color-blue-800);
     }
@@ -2186,6 +2229,10 @@
     background-color: var(--color-slate-100);
   }
 
+  .disabled\:text-slate-400:disabled {
+    color: var(--color-slate-400);
+  }
+
   @media (min-width: 40rem) {
     .sm\:h-52 {
       height: calc(var(--spacing) * 52);
@@ -2225,6 +2272,20 @@
   @media (min-width: 40rem) {
     .sm\:p-8 {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-base {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-lg {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
 
@@ -2436,10 +2497,17 @@
   --font-serif: "Playfair Display", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--slate-800);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
   background-image: radial-gradient(at 0 0, #0038a808 0, #0000 50%), radial-gradient(at 100% 0, #ce112605 0, #0000 50%), radial-gradient(at 50% 100%, #fcd11608 0, #0000 50%);
   min-height: 100vh;
 }
@@ -2515,6 +2583,54 @@ button, select, input, a {
 
 .animate-pulse-glow {
   animation: 4s ease-in-out infinite pulseGlow;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: .4s cubic-bezier(.16, 1, .3, 1) forwards fadeIn;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: .4s cubic-bezier(.16, 1, .3, 1) forwards slideInLeft;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: .4s cubic-bezier(.16, 1, .3, 1) forwards slideInRight;
 }
 
 @property --tw-translate-x {
