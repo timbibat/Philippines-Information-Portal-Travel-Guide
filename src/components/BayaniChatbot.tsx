@@ -199,9 +199,9 @@ export default function BayaniChatbot() {
           <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-amber-600 uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded">
             🤖 SERVER-SIDE SMART CONCIERGE
           </span>
-          <h3 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight mt-2">
+          <h2 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight mt-2">
             Ask Bayani, Your Virtual Companion
-          </h3>
+          </h2>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">Let Gemini plan custom itineraries, locate white sandbars, explain island lore, and suggest local delicacies.</p>
         </div>
       </div>

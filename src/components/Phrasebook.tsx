@@ -47,11 +47,11 @@ export default function Phrasebook() {
   };
 
   return (
-    <div className="col-span-1 lg:col-span-5 bento-grid-item p-6 flex flex-col justify-between">
+    <section aria-label="Filipino Phrasebook" className="col-span-1 lg:col-span-5 bento-grid-item p-6 flex flex-col justify-between">
       <div className="space-y-4">
         <div>
           <span className="stat-label">LOCAL TRANSLATIONS</span>
-          <h3 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Phrasebook</h3>
+          <h2 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Phrasebook</h2>
           <p className="text-xs text-slate-500 mt-1">Compare phrases across Tagalog, Cebuano, and Ilocano</p>
         </div>
 
@@ -80,12 +80,14 @@ export default function Phrasebook() {
               placeholder="Search words..."
               value={phraseSearch}
               onChange={(e) => setPhraseSearch(e.target.value)}
+              aria-label="Search Filipino phrases"
               className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-8 pr-3 py-1.5 text-xs outline-hidden focus:border-[#0038A8] focus:bg-white"
             />
           </div>
           <select
             value={activePhraseContext}
             onChange={(e) => setActivePhraseContext(e.target.value as any)}
+            aria-label="Filter by phrase category"
             className="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-xs outline-hidden font-bold text-slate-600 focus:border-[#0038A8]"
           >
             <option value="all">All Situations</option>
@@ -134,6 +136,6 @@ export default function Phrasebook() {
         <span>(N) Northern Dialects</span>
         <span>(S) Southern Dialects</span>
       </div>
-    </div>
+    </section>
   );
 }

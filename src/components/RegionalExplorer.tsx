@@ -11,11 +11,11 @@ export default function RegionalExplorer() {
   const regionalDestinations = DESTINATIONS.filter(d => d.islandGroup === selectedGroup);
 
   return (
-    <div className="bento-grid-item p-6 sm:p-8">
+    <section aria-label="Explore Philippine Regions" className="bento-grid-item p-6 sm:p-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
         <div>
           <span className="stat-label">ARCHIPELAGO EXPLORER</span>
-          <h3 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Geographic Divisions</h3>
+          <h2 className="text-2xl font-serif-display font-black text-slate-900 tracking-tight">Geographic Divisions</h2>
         </div>
         {/* Luzon Visayas Mindanao Selector Row */}
         <div className="flex gap-1.5 bg-slate-100 p-1 rounded-xl self-start border border-slate-200/50">
@@ -116,7 +116,7 @@ export default function RegionalExplorer() {
                   <div className="w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-xs border border-slate-200/50 relative group">
                     <img 
                       src={dest.imageUrl} 
-                      alt={dest.name} 
+                      alt={`${dest.name} — ${dest.location}, Philippines`} 
                       className="w-full h-full object-cover group-hover:scale-102 transition-all duration-500"
                     />
                   </div>
@@ -169,6 +169,6 @@ export default function RegionalExplorer() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

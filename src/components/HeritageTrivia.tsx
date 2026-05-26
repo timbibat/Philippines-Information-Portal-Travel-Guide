@@ -40,11 +40,11 @@ export default function HeritageTrivia() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white rounded-[28px] p-6 sm:p-8 border border-slate-800 shadow-2xl hover:translate-y-[-2px] hover:shadow-3xl transition-all duration-300">
+    <section aria-label="Heritage Trivia Quiz" className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white rounded-[28px] p-6 sm:p-8 border border-slate-800 shadow-2xl hover:translate-y-[-2px] hover:shadow-3xl transition-all duration-300">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
         <div>
           <span className="stat-label text-slate-500">KNOWLEDGE BATTLE</span>
-          <h3 className="text-2xl font-serif-display font-black text-white tracking-tight">Archipelago Heritage Trivia</h3>
+          <h2 className="text-2xl font-serif-display font-black text-white tracking-tight">Archipelago Heritage Trivia</h2>
           <p className="text-xs text-slate-400 mt-0.5">Test your understanding of cultural history and state statistics</p>
         </div>
         {!quizFinished && (
@@ -156,6 +156,6 @@ export default function HeritageTrivia() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
