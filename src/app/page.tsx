@@ -8,7 +8,7 @@ function JsonLd() {
       {
         '@type': 'WebSite',
         name: 'Philippines Information Portal & Travel Guide',
-        url: 'https://philippines-travel-guide.vercel.app',
+        url: 'https://philippine-info.vercel.app/',
         description:
           'Discover the 7,641 islands of the Philippines — explore regional destinations, local cuisines, Filipino phrases, heritage trivia, and plan your trip with Bayani, your AI travel concierge.',
         inLanguage: 'en',

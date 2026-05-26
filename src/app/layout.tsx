@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../index.css';
 
-const SITE_URL = 'https://philippines-travel-guide.vercel.app';
+const SITE_URL = 'https://philippine-info.vercel.app/';
 const SITE_NAME = 'Philippines Information Portal & Travel Guide';
 const SITE_DESCRIPTION =
   'Mabuhay! Discover the 7,641 islands of the Philippines — explore Luzon, Visayas, and Mindanao regions, local cuisines like Adobo and Sinigang, Filipino phrases in Tagalog, Cebuano & Ilocano, heritage trivia, and plan your trip with Bayani, your AI travel concierge.';
