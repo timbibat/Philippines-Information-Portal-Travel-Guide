@@ -14,6 +14,7 @@ export default function Footer() {
       </div>
       <div className="h-px bg-slate-900 my-4 max-w-7xl mx-auto"></div>
       <p className="text-[10px] opacity-60">© {new Date().getFullYear()} Pilipinas Discovery Portal. Enjoy the travels! Maraming Salamat.</p>
+      <p className="text-[10px] opacity-60">Created by Timothy Irwin Bibat</p>
     </footer>
   );
 }

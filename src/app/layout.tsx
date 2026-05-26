@@ -4,6 +4,9 @@ import '../index.css';
 export const metadata: Metadata = {
   title: 'Philippines Information Portal & Travel Guide',
   description: 'Mabuhay! Discover the 7,641 islands of the Philippines, local cuisines, phrases, and tourist tips using Bayani, your AI travel concierge.',
+  authors: [{ name: 'Timothy Irwin Bibat' }],
+  creator: 'Timothy Irwin Bibat',
+  publisher: 'Timothy Irwin Bibat',
 };
 
 export default function RootLayout({
